@@ -9,9 +9,14 @@
 </head>
 
 <body>
-  <form action="/add" method="post">
-    <input type="text" name="country" autofocus placeholder="<%= locals.error ? error :  'Enter country name'%>">
-    <button type="submit">Add</button>
+  <header>
+    <h1 style="text-align: center;">Travel Tracker</h1>
+  </header>
+  <form action="/add" method="post" class="">
+    <div class="search">
+      <input type="text" name="country" autofocus placeholder="<%= locals.error ? error :  'Enter country name'%>" class="input-bar">
+      <button type="submit" class="btn">Add</button>
+    </div>
   </form>
 
   <section class="ag-canvas">
@@ -377,7 +382,7 @@
     const country_codes = "<%= countries %>".split(",") 
     console.log(typeof ("<%= countries %>"))
     country_codes.forEach(code => {
-      document.getElementById(code).style.fill = 'red'
+      document.getElementById(code).style.fill = '#E71613'
     });
 
   </script>
