@@ -12,10 +12,13 @@
   <header>
     <h1 style="text-align: center;">Travel Tracker</h1>
   </header>
-  <form action="/add" method="post" class="">
+  <form id="form" action="/add" method="post">
     <div class="search">
-      <input type="text" name="country" autofocus placeholder="<%= locals.error ? error :  'Enter country name'%>" class="input-bar">
-      <button type="submit" class="btn">Add</button>
+      <input type="text" name="country" autofocus placeholder="<%= locals.error ? error :  'Enter a country name'%>" class="input-bar">
+      <div class="btn-div">
+        <button id="add-btn" type="submit" class="btn">Add</button>
+        <button id="remove-btn" type="submit" class="btn">Remove</button>
+      </div>
     </div>
   </form>
 
@@ -379,6 +382,13 @@
   <h2 class="total-count">Total Countries: <%=total%>
   </h2>
   <script>
+    document.getElementById("add-btn").addEventListener("click", function() {
+        document.getElementById("form").action = "/add";
+    });
+
+    document.getElementById("remove-btn").addEventListener("click", function() {
+        document.getElementById("form").action = "/remove";
+    });
     const country_codes = "<%= countries %>".split(",") 
     console.log(typeof ("<%= countries %>"))
     country_codes.forEach(code => {

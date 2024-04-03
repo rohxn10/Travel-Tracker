@@ -46,11 +46,17 @@ form{
   background: transparent;
   border: none;
 }
+.btn-div{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
 .btn{
   border-radius: 10px;
   background-color: #E71613;
-  color: black;
+  color: #222020;
   padding: 10px;
+  margin: 0px 3px;
   /* margin-left: 10px; */
   cursor: pointer;
   border: none;
@@ -58,7 +64,9 @@ form{
 .btn:hover{
   background-color: #222020;
   color: #E71613;
+  transition: 0.3s;
 }
+
 
 .ag-canvas {
   display: -webkit-flex;
@@ -85,17 +93,17 @@ form{
   width: 100%;
   height: auto;
   max-height: 100%;
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
 }
 .ag-canvas_svg path {
   fill: #222020;
   fill-opacity: 1;
-  stroke: #E71613;
+  stroke: #853535;
   stroke-opacity: 1;
-  stroke-width: 0.2;
+  stroke-width: 0.5;
   transition: 0.5s;
 }
-.ag-canvas_svg path :hover{
+.ag-canvas_svg path:hover{
   fill: #E71613;
   fill-opacity: 0.5;
   cursor: pointer;
