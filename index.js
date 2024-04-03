@@ -43,7 +43,7 @@ app.post("/add", async (req, res)=>{
         const data= result.rows[0];
         const countryCode= data.country_code;
         try{
-          const result= await db.query(
+          const vcountries= await db.query(
             "SELECT * FROM visited_countries WHERE country_code = $1",
             [countryCode])
           } catch{
